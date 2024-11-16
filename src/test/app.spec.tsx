@@ -10,6 +10,7 @@ test("renders all users first names", async () => {
 
   await Promise.all(
     usersResult.users.map(async (user) => {
+      // @ts-ignore expect.element, TODO: ts config?
       return expect.element(getByText(user.firstName)).toBeInTheDocument();
     })
   );
@@ -24,7 +25,10 @@ test("renders user details when clicking on name", async () => {
 
   await getByText(firstName).click();
 
+  // @ts-ignore
   await expect.element(getByText(String(id))).toBeInTheDocument();
+  // @ts-ignore
   await expect.element(getByText(phoneNumber)).toBeInTheDocument();
+  // @ts-ignore
   await expect.element(getByText(username)).toBeInTheDocument();
 });
