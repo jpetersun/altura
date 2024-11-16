@@ -1,9 +1,9 @@
 To run locally
-`npm i`
-`npm run dev`
+- `npm i`
+- `npm run dev`
 
 To run tests locally
-`npm run test`
+- `npm run test`
 
 Requirements
 1. Consume the below JSON data and store it in a JavaScript Object.
