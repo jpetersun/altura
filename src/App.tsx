@@ -4,6 +4,7 @@ import { fetchUsers, Users, User } from "./api";
 
 function App() {
   const [usersResult, setUsersResult] = useState<Users>();
+  const [isDisplayUserDetails, setIsDisplayUserDetails] = useState<any>([]);
 
   useEffect(() => {
     const fetchUsersResult = fetchUsers();
@@ -11,7 +12,7 @@ function App() {
   }, []);
 
   const displayUserDetails = (id: number) => {
-    return;
+    setIsDisplayUserDetails([...isDisplayUserDetails, id]);
   };
 
   return (
@@ -21,6 +22,12 @@ function App() {
           return (
             <li key={user.id} onClick={() => displayUserDetails(user.id)}>
               {user.firstName} {user.lastName}
+              {!isDisplayUserDetails.includes(user.id) ? null : (
+                <p>
+                  {user.id} {user.firstName} {user.lastName} {user.username}{" "}
+                  {user.phoneNumber}
+                </p>
+              )}
             </li>
           );
         })}
