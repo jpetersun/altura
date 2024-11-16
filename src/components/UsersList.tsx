@@ -17,14 +17,29 @@ const UsersList = () => {
     setIsDisplayUserDetails([...isDisplayUserDetails, id]);
   };
 
+  const deleteUser = (id: number) => {
+    if (usersResult) {
+      const usersDeleteResult = usersResult.users.filter(
+        (user) => user.id !== id
+      );
+
+      setUsersResult({
+        ...usersResult,
+        users: usersDeleteResult,
+      });
+    }
+  };
+
   return (
     <ul>
       {usersResult?.users?.map((user: User) => {
         return (
           <UserItem
+            key={user.id}
             user={user}
             displayUserDetails={displayUserDetails}
             isDisplayUserDetails={isDisplayUserDetails}
+            deleteUser={deleteUser}
           />
         );
       })}
