@@ -1,3 +1,10 @@
+To run locally
+`npm i`
+`npm run dev`
+
+To run tests locally
+`npm run test`
+
 Requirements
 1. Consume the below JSON data and store it in a JavaScript Object.
 2. Display each user's first name and last name data in a list using `<li>` tags.
