@@ -1,6 +1,7 @@
 To run locally
 - `npm i`
 - `npm run dev`
+- open browser on `http://localhost:5174/`
 
 To run tests locally
 - `npm run test`
