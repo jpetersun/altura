@@ -14,17 +14,19 @@ const UserItem = ({
   deleteUser,
 }: Props) => {
   return (
-    <div>
+    <div className="mb-6">
       <li key={user.id} onClick={() => displayUserDetails(user.id)}>
         {user.firstName} {user.lastName}
         {!isDisplayUserDetails.includes(user.id) ? null : (
           <p>
-            {user.id} {user.firstName} {user.lastName} {user.username}{" "}
+            Details: {user.id} {user.firstName} {user.lastName} {user.username}{" "}
             {user.phoneNumber}
           </p>
         )}
       </li>
-      <button onClick={() => deleteUser(user.id)}>Delete</button>
+      <button className="mt-3" onClick={() => deleteUser(user.id)}>
+        Delete
+      </button>
     </div>
   );
 };
